@@ -347,6 +347,21 @@ function SignInPanel({ initialRole }: { initialRole: Role }) {
   const [error, setError] = useState(false);
   const { signIn } = useSession();
 
+  // Next keeps this route's state while it is hidden, so leaving it must clear the form:
+  // otherwise logging out returns to a button stuck on "Signing in…" with the password still filled in.
+  useEffect(
+    () => () => {
+      setRole(initialRole);
+      setEmail("");
+      setPassword("");
+      setShowPw(false);
+      setLoading(false);
+      setPicked(null);
+      setError(false);
+    },
+    [initialRole],
+  );
+
   const copy = ROLE_COPY[role];
 
   const fillDemo = (r: Role) => {
