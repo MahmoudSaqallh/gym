@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="flame">
+<path id="Vector" d="M12.5 11.3969C14.9302 7.95104 12.674 3.24792 11.4583 2.08333C11.4583 5.61979 9.13021 7.60313 7.63854 9.06875C6.14896 10.5354 5.20833 12.8406 5.20833 14.8896C5.20833 18.7479 8.47292 21.875 12.5 21.875C16.5271 21.875 19.7917 18.7479 19.7917 14.8896C19.7917 13.1062 18.5083 10.3031 17.3615 9.06875C15.1906 12.5615 13.9687 12.5615 12.5 11.3969Z" stroke-width="2.34375" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_4)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="1.83781e-07" y1="2.08333" x2="1.83781e-07" y2="22.9167" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B8EB14"/>
+<stop offset="1" stop-color="#6AA204"/>
+</linearGradient>
+</defs>
+</svg>

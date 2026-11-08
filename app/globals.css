@@ -1,26 +1,1000 @@
 @import "tailwindcss";
 
+/* Theme is driven by a `.dark` class on <html> (set before paint by the inline script in layout.tsx). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────────────────── Design tokens (from Figma: Kinora – Fitness & Coaching Dashboard) ───────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* surfaces */
+  --page: #f5f7f8;
+  --frame-border: rgba(0, 0, 0, 0.12);
+  --card-border: rgba(0, 0, 0, 0.09);
+  --card-bg: linear-gradient(180deg, #ffffff 0%, #fafbfa 100%);
+  --pill: #f0f2f3;
+  --row: #f2f4f5;
+  --track: #eff1ef;
+  --track-2: #e6e9e6;
+  --divider: #e5e7eb;
+  --grid-line: rgba(0, 0, 0, 0.07);
+  --hairline-from: rgba(0, 0, 0, 0.12);
+  --hairline-to: rgba(0, 0, 0, 0.03);
+  --glass-from: rgba(250, 251, 251, 0.72);
+  --glass-to: rgba(243, 245, 246, 0.78);
+  --glass-border: rgba(0, 0, 0, 0.09);
+  --search-bg: linear-gradient(90deg, #f1f4f5 0%, #eef1f2 55%, #ebeef0 100%);
+  --sidebar-bg: linear-gradient(99.93deg, #eef1f2 14.645%, #eef1f2 21.716%, #f9fbfb 23.483%, #eef1f2 25.251%, #eef1f2 85.355%);
+  --nav-active-bg: linear-gradient(90deg, rgb(var(--lime-rgb)/0.161) 0%, rgb(var(--lime-rgb)/0.051) 38%, rgb(var(--lime-rgb)/0) 76%),
+    linear-gradient(174.66deg, rgba(255, 255, 255, 0.55) 10.99%, rgba(255, 255, 255, 0.15) 37.517%, rgba(255, 255, 255, 0) 59.362%),
+    #ffffff;
+  --nav-active-border: rgba(106, 148, 18, 0.45);
+  --nav-hover: rgba(0, 0, 0, 0.04);
+  --frame-glow: none;
+
+  /* chips (round icon badges) */
+  --chip-border: rgb(var(--accent-ink-rgb)/0.34);
+  --chip-border-warm: rgba(180, 110, 0, 0.34);
+  --chip-bg: radial-gradient(90% 55% at 62% -8%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #ffffff 0%, #f3f5f1 52%, #e5e9e1 100%);
+
+  /* text */
+  --ink: #0a0a0a;
+  --body: #40433f;
+  --subtle: #636768;
+  --muted: #6d6e6e;
+  --accent-ink: #4c7a02;
+
+  /* brand */
+  --lime: #9ae600;
+  --lime-2: #7ebc0b;
+  --lime-3: #64a003;
+  --lime-4: #4c7a02;
+  --green: #0db50e;
+  --cta: #9bc101;
+  --cta-rgb: 155 193 1;
+  --lime-rgb: 154 230 0;
+  --accent-ink-rgb: 76 122 2;
+  --lime-bright: #b4ff00;
+  --on-accent: #101401;
+  --grad-from: #70b10f;
+  --grad-to: #5b9c0a;
+  --grad-rgb: 112 177 15;
+  --icon-from: #8fd400;
+  --icon-to: #4c7a02;
+  --selected-bg: #eef9d6;
+  --split-1: #8fbf00;
+  --split-2: #5c9e0a;
+  --split-3: #2f8f3f;
+  --success-bg: #dbfce7;
+  --success-ink: #016630;
+  --accent-hue: 0deg;
+  --bar-mid: #cdf380;
+  --bar-to: rgb(var(--lime-rgb)/0.16);
+  --ring-track: #eff1ef;
+
+  /* auth */
+  --auth-base: #e4e8ea;
+  --auth-overlay: linear-gradient(180deg, rgba(232, 236, 238, 0.92) 0%, rgba(232, 236, 238, 0.88) 45%, rgba(232, 236, 238, 0.96) 100%);
+  --auth-card: #ffffff;
+  --auth-card-border: rgba(0, 0, 0, 0.16);
+  --auth-panel: linear-gradient(180deg, #ffffff 0%, #fafbfa 100%);
+  --auth-panel-border: rgba(0, 0, 0, 0.08);
+  --auth-input: #f2f4f5;
+  --auth-input-border: #e5e7eb;
+  --auth-link: #4c7a02;
+  --auth-control: #ffffff;
+  --auth-control-border: #e5e7eb;
+  --auth-feature-border: rgb(var(--accent-ink-rgb)/0.34);
+
+  /* popovers / menus */
+  --pop-bg: #ffffff;
+  --pop-border: #e5e7eb;
+  --menu-border: rgba(230, 230, 235, 0.4);
+  --chip-border-neutral: rgba(0, 0, 0, 0.16);
+  --menu-hover: #f5f7f8;
+  --panel: #ffffff;
+  --thead: #f9fbfc;
+  --field: #f5f7f8;
+  --ghost-bg: #f7f9fb;
+  --ghost-border: #f5f7f8;
+  --orb-shadow-1: rgba(18, 22, 24, 0.2);
+  --orb-shadow-2: rgba(18, 22, 24, 0.09);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --page: #050506;
+  --frame-border: rgba(255, 255, 255, 0.5);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --card-bg: linear-gradient(to bottom right, rgba(255, 255, 255, 0.14) 14.379%, rgba(255, 255, 255, 0.07) 22.928%, rgba(255, 255, 255, 0.03) 34.327%, rgba(255, 255, 255, 0.01) 41.451%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(48% 52% at 100% 0%, rgba(200, 205, 210, 0.12) 0%, rgba(200, 205, 210, 0.043) 45%, rgba(200, 205, 210, 0) 72%),
+    radial-gradient(52% 56% at 100% 100%, rgba(200, 205, 210, 0.11) 0%, rgba(200, 205, 210, 0.04) 45%, rgba(200, 205, 210, 0) 72%),
+    linear-gradient(180deg, #08090a 0%, #010102 40%, #000000 100%);
+  --pill: #1c1d1f;
+  --row: #121415;
+  --track: #181819;
+  --track-2: #232325;
+  --divider: rgba(255, 255, 255, 0.1);
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --hairline-from: rgba(255, 255, 255, 0.16);
+  --hairline-to: rgba(255, 255, 255, 0.05);
+  --glass-from: rgba(10, 12, 13, 0.3);
+  --glass-to: rgba(5, 6, 7, 0.34);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --search-bg: linear-gradient(90deg, #0f1011 0%, #131415 50%, #161718 80%, #212326 100%);
+  --sidebar-bg: linear-gradient(99.93deg, #000000 14.645%, #000000 21.716%, rgba(200, 205, 210, 0.12) 23.483%, #000000 25.251%, #000000 85.355%);
+  --nav-active-bg: linear-gradient(90deg, rgb(var(--lime-rgb)/0.2) 0%, rgb(var(--lime-rgb)/0.071) 38%, rgb(var(--lime-rgb)/0) 76%),
+    linear-gradient(174.66deg, rgba(255, 255, 255, 0.1) 10.99%, rgba(255, 255, 255, 0.03) 37.517%, rgba(255, 255, 255, 0) 59.362%),
+    #1c1d1f;
+  --nav-active-border: rgba(200, 240, 120, 0.25);
+  --nav-hover: rgba(255, 255, 255, 0.05);
+  --frame-glow: radial-gradient(820px 568px at 0 0, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0) 72%);
+
+  --chip-border: rgb(var(--lime-rgb)/0.26);
+  --chip-border-warm: rgba(250, 171, 2, 0.26);
+  --chip-bg: radial-gradient(90% 55% at 62% -8%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #1c1f1f 0%, #0b0e0d 52%, #080a09 100%);
+
+  --ink: #ffffff;
+  --body: #d5d8d7;
+  --subtle: #b2b4b6;
+  --muted: #8e8e8e;
+  --accent-ink: #9ae600;
+  --accent-ink-rgb: 154 230 0;
+  --bar-mid: #5f8a0a;
+  --icon-from: #b8eb14;
+  --icon-to: #6aa204;
+  --selected-bg: #1c2609;
+  --success-bg: #10321e;
+  --success-ink: #7be3a4;
+
+  --bar-to: rgb(var(--lime-rgb)/0.14);
+  --ring-track: #181819;
+
+  --auth-base: #000000;
+  --auth-overlay: linear-gradient(180deg, rgba(4, 6, 6, 0.95) 0%, rgba(4, 6, 6, 0.92) 45%, rgba(4, 6, 6, 0.96) 100%);
+  --auth-card: #0a0b0c;
+  --auth-card-border: rgba(255, 255, 255, 0.6);
+  --auth-panel: linear-gradient(180deg, #121314 0%, #0b0c0d 100%);
+  --auth-panel-border: rgba(255, 255, 255, 0.12);
+  --auth-input: #121415;
+  --auth-input-border: rgba(255, 255, 255, 0.1);
+  --auth-link: #c9e406;
+  --auth-control: #0e1011;
+  --auth-control-border: rgba(255, 255, 255, 0.1);
+  --auth-feature-border: rgb(var(--lime-rgb)/0.26);
+
+  --pop-bg: #0e1011;
+  --pop-border: rgba(255, 255, 255, 0.1);
+  --menu-border: rgba(70, 70, 70, 0.4);
+  --chip-border-neutral: rgba(255, 255, 255, 0.14);
+  --menu-hover: rgba(255, 255, 255, 0.05);
+  --panel: #0b0c0d;
+  --thead: rgba(255, 255, 255, 0.04);
+  --field: #1a1b1c;
+  --ghost-bg: #262626;
+  --ghost-border: rgba(255, 255, 255, 0.1);
+  --orb-shadow-1: rgba(255, 255, 255, 0.22);
+  --orb-shadow-2: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-subtle: var(--subtle);
+  --color-muted: var(--muted);
+  --color-accent-ink: var(--accent-ink);
+  --color-pill: var(--pill);
+  --color-row: var(--row);
+  --color-track: var(--track);
+  --color-track-2: var(--track-2);
+  --color-divider: var(--divider);
+  --color-lime: var(--lime);
+  --color-lime-2: var(--lime-2);
+  --color-lime-3: var(--lime-3);
+  --color-lime-4: var(--lime-4);
+  --color-green: var(--green);
+  --color-cta: var(--cta);
+  --color-auth-link: var(--auth-link);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* 1380px: the 3-column dashboard grid from the 1440px Figma frame */
+  --breakpoint-wide: 86.25rem;
+}
+
+html,
+body {
+  background: var(--page);
+  color: var(--ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(var(--lime-rgb)/0.35);
+}
+
+/* ───────────────────────── Reusable surfaces ───────────────────────── */
+@layer components {
+.k-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 0.8px solid var(--card-border);
+  background: var(--card-bg);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), border-color 0.3s;
+}
+.k-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -24px rgb(var(--accent-ink-rgb)/0.35);
+}
+.dark .k-card:hover {
+  box-shadow: 0 18px 44px -22px rgb(var(--lime-rgb)/0.22);
+}
+
+.k-chip {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 999px;
+  border: 0.8px solid var(--chip-border);
+  background: var(--chip-bg);
+}
+.k-chip[data-tone="warm"] {
+  border-color: var(--chip-border-warm);
+}
+.k-chip[data-tone="neutral"] {
+  border-color: var(--chip-border-neutral);
+}
+/* chip on always-dark surfaces (photo / hero cards) */
+.k-chip[data-tone="onDark"] {
+  border-color: rgb(var(--lime-rgb)/0.26);
+  background: radial-gradient(90% 55% at 62% -8%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #1c1f1f 0%, #0b0e0d 52%, #080a09 100%);
+}
+/* always-dark hero surface (Workout Plan, Next Session…) */
+.k-card.k-dark-card {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.14) 14.379%, rgba(255, 255, 255, 0.07) 22.928%, rgba(255, 255, 255, 0.03) 34.327%, rgba(255, 255, 255, 0.01) 41.451%, rgba(255, 255, 255, 0) 50%), #060807;
+  color: #fff;
+}
+
+.k-pop {
+  position: absolute;
+  z-index: 60;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 0.8px solid var(--pop-border);
+  background: var(--pop-bg);
+  box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform-origin: top right;
+  animation: k-menu 0.28s var(--ease-out) both;
+}
+
+.k-hairline {
+  background: linear-gradient(90deg, var(--hairline-from), var(--hairline-to));
+}
+}
+
+/* Theme-swapped image pairs */
+.only-light {
+  display: block;
+}
+.only-dark {
+  display: none;
+}
+.dark .only-light {
+  display: none;
+}
+.dark .only-dark {
+  display: block;
+}
+
+/* ───────────────────────── Motion ───────────────────────── */
+@keyframes k-rise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+    scale: 0.985;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@keyframes k-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes k-slide-right {
+  from {
+    opacity: 0;
+    translate: -14px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes k-pop {
+  0% {
+    opacity: 0;
+    scale: 0.3;
+  }
+  70% {
+    opacity: 1;
+    scale: 1.15;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes k-grow-y {
+  from {
+    scale: 1 0;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+@keyframes k-grow-x {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+@keyframes k-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+@keyframes k-heartbeat {
+  0%,
+  40%,
+  100% {
+    scale: 1;
+  }
+  15% {
+    scale: 1.18;
+  }
+  28% {
+    scale: 0.96;
+  }
+}
+@keyframes k-ping {
+  0% {
+    opacity: 0.55;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 2.1;
+  }
+}
+@keyframes k-shimmer {
+  from {
+    translate: -120% 0;
+  }
+  to {
+    translate: 220% 0;
+  }
+}
+@keyframes k-kenburns {
+  from {
+    scale: 1.08;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes k-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes k-ecg {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+@keyframes k-reveal-x {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes k-type {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+}
+@keyframes k-menu {
+  from {
+    opacity: 0;
+    translate: 0 -6px;
+    scale: 0.96;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@keyframes k-bell {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  20% {
+    rotate: 14deg;
+  }
+  40% {
+    rotate: -12deg;
+  }
+  60% {
+    rotate: 7deg;
+  }
+  80% {
+    rotate: -4deg;
+  }
+}
+@keyframes k-flash {
+  from {
+    box-shadow: 0 0 0 4px rgb(var(--lime-rgb)/0.4);
+  }
+  to {
+    box-shadow: 0 0 0 0 rgb(var(--lime-rgb)/0);
+  }
+}
+@keyframes k-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Entrance: elements with .k-in animate once their nearest [data-shown] ancestor becomes visible.
+   Stagger with style={{"--d": "120ms"}}. */
+.k-in {
+  opacity: 0;
+}
+[data-shown="true"] .k-in,
+.k-in[data-shown="true"] {
+  animation: k-rise 0.8s var(--ease-out) var(--d, 0ms) both;
+}
+[data-shown="true"] .k-in-fade {
+  animation: k-fade 0.9s var(--ease-out) var(--d, 0ms) both;
+}
+[data-shown="true"] .k-in-left {
+  animation: k-slide-right 0.7s var(--ease-out) var(--d, 0ms) both;
+}
+[data-shown="true"] .k-in-pop {
+  animation: k-pop 0.6s var(--ease-out) var(--d, 0ms) both;
+}
+.k-in-fade,
+.k-in-left,
+.k-in-pop {
+  opacity: 0;
+}
+
+/* SVG variant: Chromium skips painting SVG shapes held by a finished `fill-mode: both` animation,
+   so the end state lives in normal styles and the animation only fills backwards. */
+.k-svg-pop {
+  opacity: 0;
+}
+[data-shown="true"] .k-svg-pop {
+  opacity: 1;
+  animation: k-pop 0.6s var(--ease-out) var(--d, 0ms) backwards;
+}
+
+/* SVG stroke draw (use pathLength="1") */
+.k-draw {
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1.01;
+}
+[data-shown="true"] .k-draw {
+  transition: stroke-dashoffset var(--dur, 1.4s) var(--ease-out) var(--d, 0ms);
+  stroke-dashoffset: 0;
+}
+
+/* progress ring (circle with pathLength=1, --p = 0..1) */
+.k-ring {
+  stroke-dasharray: var(--p) 2;
+  stroke-dashoffset: calc(var(--p) + 0.02);
+}
+[data-shown="true"] .k-ring {
+  transition: stroke-dashoffset 1.6s var(--ease-out) var(--d, 0ms);
+  stroke-dashoffset: 0;
+}
+
+.k-bar {
+  transform-origin: bottom;
+  scale: 1 0;
+}
+[data-shown="true"] .k-bar {
+  animation: k-grow-y 0.9s var(--ease-spring) var(--d, 0ms) both;
+}
+.k-fill {
+  transform-origin: left;
+  scale: 0 1;
+}
+[data-shown="true"] .k-fill {
+  animation: k-grow-x 1.3s var(--ease-out) var(--d, 0ms) both;
+}
+
+.k-float {
+  animation: k-float 6s ease-in-out infinite;
+}
+.k-heartbeat {
+  animation: k-heartbeat 1.4s ease-in-out infinite;
+}
+.k-shine {
+  position: relative;
+  overflow: hidden;
+}
+.k-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+  translate: -120% 0;
+  pointer-events: none;
+}
+.k-shine:hover::after {
+  animation: k-shimmer 0.9s var(--ease-out);
+}
+
+/* Smooth theme crossfade fallback (when View Transitions are unavailable) */
+.theme-fade,
+.theme-fade *,
+.theme-fade *::before,
+.theme-fade *::after {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, fill 0.35s ease, stroke 0.35s ease !important;
+}
+
+/* Circular theme reveal (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.no-motion *,
+.no-motion *::before,
+.no-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  transition-delay: 0ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Onboarding body: the green veins breathe forever. Resting opacities are what
+   reduced-motion and the Animations setting fall back to. */
+.k-glow-dim,
+.k-glow-bloom,
+.k-glow-core,
+.k-glow-flow {
+  pointer-events: none;
+  will-change: opacity;
+}
+.k-glow-dim {
+  filter: brightness(0);
+  opacity: 0;
+  animation: k-glow-dim 2.8s ease-in-out infinite;
+}
+.k-glow-core {
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  animation: k-glow-core 2.8s ease-in-out infinite;
+}
+.k-glow-bloom {
+  filter: blur(14px) saturate(1.5) brightness(1.25);
+  opacity: 0.5;
+  animation: k-glow-bloom 2.8s ease-in-out infinite;
+}
+.k-glow-flow {
+  mix-blend-mode: screen;
+  filter: brightness(1.5);
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(180deg, transparent 38%, #000 50%, transparent 62%);
+  mask-image: linear-gradient(180deg, transparent 38%, #000 50%, transparent 62%);
+  -webkit-mask-size: 100% 300%;
+  mask-size: 100% 300%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: k-glow-flow 4.2s linear infinite;
+}
+@keyframes k-glow-dim {
+  0%, 100% { opacity: 0.68; }
+  50% { opacity: 0; }
+}
+@keyframes k-glow-core {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+@keyframes k-glow-bloom {
+  0%, 100% { opacity: 0.08; scale: 1; }
+  50% { opacity: 1; scale: 1.02; }
+}
+@keyframes k-glow-flow {
+  0% { opacity: 1; -webkit-mask-position: 0 100%; mask-position: 0 100%; }
+  100% { opacity: 1; -webkit-mask-position: 0 0; mask-position: 0 0; }
+}
+
+/* Accent palettes (generated). No [data-accent] attribute = the default Figma lime above. */
+:root[data-accent="e60000"] {
+  --lime: #e60000;
+  --lime-rgb: 230 0 0;
+  --lime-2: #bd0000;
+  --lime-3: #980000;
+  --lime-4: #780000;
+  --lime-bright: #ec3838;
+  --on-accent: #ffffff;
+  --cta: #e60000;
+  --cta-rgb: 230 0 0;
+  --grad-from: #bd0000;
+  --grad-to: #a10000;
+  --grad-rgb: 189 0 0;
+  --split-1: #c40000;
+  --split-2: #980000;
+  --split-3: #6e0000;
+  --green: #b80000;
+  --accent-hue: -80deg;
+  --accent-ink: #db0000;
+  --accent-ink-rgb: 219 0 0;
+  --icon-from: #db0000;
+  --icon-to: #db0000;
+  --selected-bg: #fbd6d6;
+  --success-bg: #fbd6d6;
+  --success-ink: #db0000;
+  --nav-active-border: rgb(219 0 0 / 0.45);
+  --auth-link: #db0000;
+}
+:root.dark[data-accent="e60000"] {
+  --accent-ink: #f06666;
+  --accent-ink-rgb: 240 102 102;
+  --icon-from: #f27878;
+  --icon-to: #ad4949;
+  --selected-bg: #3b090a;
+  --success-bg: #3b090a;
+  --success-ink: #f06666;
+  --nav-active-border: rgb(240 102 102 / 0.3);
+  --auth-link: #f06666;
+}
+:root[data-accent="e67c00"] {
+  --lime: #e67c00;
+  --lime-rgb: 230 124 0;
+  --lime-2: #bd6600;
+  --lime-3: #985200;
+  --lime-4: #784000;
+  --lime-bright: #ec9938;
+  --on-accent: #101401;
+  --cta: #e67c00;
+  --cta-rgb: 230 124 0;
+  --grad-from: #bd6600;
+  --grad-to: #a15700;
+  --grad-rgb: 189 102 0;
+  --split-1: #c46900;
+  --split-2: #985200;
+  --split-3: #6e3c00;
+  --green: #b86300;
+  --accent-hue: -47deg;
+  --accent-ink: #a15700;
+  --accent-ink-rgb: 161 87 0;
+  --icon-from: #db7600;
+  --icon-to: #a15700;
+  --selected-bg: #fbead6;
+  --success-bg: #fbead6;
+  --success-ink: #a15700;
+  --nav-active-border: rgb(161 87 0 / 0.45);
+  --auth-link: #a15700;
+}
+:root.dark[data-accent="e67c00"] {
+  --accent-ink: #e67c00;
+  --accent-ink-rgb: 230 124 0;
+  --icon-from: #e98c1f;
+  --icon-to: #a65900;
+  --selected-bg: #3b250a;
+  --success-bg: #3b250a;
+  --success-ink: #e67c00;
+  --nav-active-border: rgb(230 124 0 / 0.3);
+  --auth-link: #e67c00;
+}
+:root[data-accent="00cee6"] {
+  --lime: #00cee6;
+  --lime-rgb: 0 206 230;
+  --lime-2: #00a9bd;
+  --lime-3: #008898;
+  --lime-4: #006b78;
+  --lime-bright: #38d9ec;
+  --on-accent: #101401;
+  --cta: #00cee6;
+  --cta-rgb: 0 206 230;
+  --grad-from: #00a9bd;
+  --grad-to: #0090a1;
+  --grad-rgb: 0 169 189;
+  --split-1: #00afc4;
+  --split-2: #008898;
+  --split-3: #00636e;
+  --green: #00a5b8;
+  --accent-hue: 106deg;
+  --accent-ink: #00717e;
+  --accent-ink-rgb: 0 113 126;
+  --icon-from: #00c4db;
+  --icon-to: #00717e;
+  --selected-bg: #d6f7fb;
+  --success-bg: #d6f7fb;
+  --success-ink: #00717e;
+  --nav-active-border: rgb(0 113 126 / 0.45);
+  --auth-link: #00717e;
+}
+:root.dark[data-accent="00cee6"] {
+  --accent-ink: #00cee6;
+  --accent-ink-rgb: 0 206 230;
+  --icon-from: #1fd4e9;
+  --icon-to: #0094a6;
+  --selected-bg: #09373d;
+  --success-bg: #09373d;
+  --success-ink: #00cee6;
+  --nav-active-border: rgb(0 206 230 / 0.3);
+  --auth-link: #00cee6;
+}
+:root[data-accent="8400e6"] {
+  --lime: #8400e6;
+  --lime-rgb: 132 0 230;
+  --lime-2: #6c00bd;
+  --lime-3: #570098;
+  --lime-4: #450078;
+  --lime-bright: #9f38ec;
+  --on-accent: #ffffff;
+  --cta: #8400e6;
+  --cta-rgb: 132 0 230;
+  --grad-from: #6c00bd;
+  --grad-to: #5c00a1;
+  --grad-rgb: 108 0 189;
+  --split-1: #7000c4;
+  --split-2: #570098;
+  --split-3: #3f006e;
+  --green: #6a00b8;
+  --accent-hue: -165deg;
+  --accent-ink: #8400e6;
+  --accent-ink-rgb: 132 0 230;
+  --icon-from: #7d00db;
+  --icon-to: #8400e6;
+  --selected-bg: #ebd6fb;
+  --success-bg: #ebd6fb;
+  --success-ink: #8400e6;
+  --nav-active-border: rgb(132 0 230 / 0.45);
+  --auth-link: #8400e6;
+}
+:root.dark[data-accent="8400e6"] {
+  --accent-ink: #bb73f1;
+  --accent-ink-rgb: 187 115 241;
+  --icon-from: #c384f3;
+  --icon-to: #8753ae;
+  --selected-bg: #26093d;
+  --success-bg: #26093d;
+  --success-ink: #bb73f1;
+  --nav-active-border: rgb(187 115 241 / 0.3);
+  --auth-link: #bb73f1;
+}
+:root[data-accent="e600b4"] {
+  --lime: #e600b4;
+  --lime-rgb: 230 0 180;
+  --lime-2: #bd0094;
+  --lime-3: #980077;
+  --lime-4: #78005e;
+  --lime-bright: #ec38c5;
+  --on-accent: #101401;
+  --cta: #e600b4;
+  --cta-rgb: 230 0 180;
+  --grad-from: #bd0094;
+  --grad-to: #a1007e;
+  --grad-rgb: 189 0 148;
+  --split-1: #c40099;
+  --split-2: #980077;
+  --split-3: #6e0056;
+  --green: #b80090;
+  --accent-hue: -127deg;
+  --accent-ink: #cf00a2;
+  --accent-ink-rgb: 207 0 162;
+  --icon-from: #db00ab;
+  --icon-to: #cf00a2;
+  --selected-bg: #fbd6f3;
+  --success-bg: #fbd6f3;
+  --success-ink: #cf00a2;
+  --nav-active-border: rgb(207 0 162 / 0.45);
+  --auth-link: #cf00a2;
+}
+:root.dark[data-accent="e600b4"] {
+  --accent-ink: #ee4dcb;
+  --accent-ink-rgb: 238 77 203;
+  --icon-from: #f062d1;
+  --icon-to: #ab3792;
+  --selected-bg: #3b0932;
+  --success-bg: #3b0932;
+  --success-ink: #ee4dcb;
+  --nav-active-border: rgb(238 77 203 / 0.3);
+  --auth-link: #ee4dcb;
+}
+
+/* Baked green assets. Plain <img> at the default accent; recolored through a mask otherwise. */
+.k-tint img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+:root[data-accent] .k-tint {
+  -webkit-mask: var(--m) center / 100% 100% no-repeat;
+  mask: var(--m) center / 100% 100% no-repeat;
+}
+:root[data-accent] .k-tint img {
+  visibility: hidden;
+}
+:root[data-accent] .k-tint[data-paint="grad"] {
+  background: linear-gradient(180deg, var(--icon-from), var(--icon-to));
+}
+:root[data-accent] .k-tint[data-paint="bright"] {
+  background: linear-gradient(180deg, var(--lime-bright), var(--lime));
+}
+:root[data-accent] .k-tint[data-paint="lime"] {
+  background: var(--lime);
+}
+:root[data-accent] .k-tint[data-paint="ink"] {
+  background: var(--accent-ink);
+}
+:root[data-accent] .k-tint[data-paint="on"] {
+  background: var(--on-accent);
+}
+/* Raster art whose only colour is the brand green (anatomy renders, auth glow). */
+:root[data-accent] .k-hue {
+  filter: hue-rotate(var(--accent-hue));
+}
+/* Heat map: light mode uses Figma's exact cells at the default accent. */
+:root[data-accent]:not(.dark) .k-heat {
+  background: color-mix(in oklab, var(--lime) calc(var(--t) * 100%), var(--track));
+}
+
+:root[data-accent="e60000"] {
+  --bar-mid: #f38080;
+}
+:root.dark[data-accent="e60000"] {
+  --bar-mid: #8a0000;
+}
+:root[data-accent="e67c00"] {
+  --bar-mid: #f3be80;
+}
+:root.dark[data-accent="e67c00"] {
+  --bar-mid: #8a4a00;
+}
+:root[data-accent="00cee6"] {
+  --bar-mid: #80e7f3;
+}
+:root.dark[data-accent="00cee6"] {
+  --bar-mid: #007c8a;
+}
+:root[data-accent="8400e6"] {
+  --bar-mid: #c280f3;
+}
+:root.dark[data-accent="8400e6"] {
+  --bar-mid: #4f008a;
+}
+:root[data-accent="e600b4"] {
+  --bar-mid: #f380da;
+}
+:root.dark[data-accent="e600b4"] {
+  --bar-mid: #8a006c;
+}
+
+/* AI orb: a still sphere whose iridescent bands cycle through the spectrum.
+   The "color" blend keeps the render's highlights and shape; only hue and saturation travel. */
+.k-orb-color {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  mix-blend-mode: color;
+  -webkit-mask: var(--orb-mask) center / contain no-repeat;
+  mask: var(--orb-mask) center / contain no-repeat;
+}
+.k-orb-color > span {
+  position: absolute;
+  inset: -25%;
+  background: conic-gradient(from 0deg, #ff2fa0, #ff8a1f, #e8f51e, #27e87a, #18d6f2, #3f6bff, #b13dff, #ff2fa0);
+  animation: k-spin 6s linear infinite;
+}
+
+/* ───────── Arabic / right-to-left ───────── */
+html[data-i18n="pending"] body {
+  visibility: hidden;
+}
+html[lang="ar"] body,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea {
+  font-family: var(--font-arabic), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+/* Letter-spacing tears joined Arabic letters apart. */
+html[lang="ar"] * {
+  letter-spacing: 0 !important;
+}
+/* Charts read left to right in both languages. */
+[dir="rtl"] svg {
+  direction: ltr;
+}
+[dir="rtl"] .k-fill {
+  transform-origin: right;
+}
+[dir="rtl"] [style*="28699.svg"],
+[dir="rtl"] [style*="c3bc6.svg"],
+[dir="rtl"] [style*="2dbce.svg"],
+[dir="rtl"] [style*="f674e.svg"],
+[dir="rtl"] [style*="66f46.svg"],
+[dir="rtl"] [style*="8165f.svg"],
+[dir="rtl"] [style*="44b38.svg"],
+[dir="rtl"] [style*="9f8d7.svg"],
+[dir="rtl"] [style*="60807.svg"],
+[dir="rtl"] img[src*="chevron-right"] {
+  scale: -1 1;
+}
+
+:root {
+  --dir: 1;
+}
+[dir="rtl"] {
+  --dir: -1;
+}
+[dir="rtl"] .k-pop {
+  transform-origin: top left;
 }

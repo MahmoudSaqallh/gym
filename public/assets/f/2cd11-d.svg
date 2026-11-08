@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="clock">
+<path id="Vector" d="M3.25 13C3.25 14.2804 3.50219 15.5482 3.99217 16.7312C4.48216 17.9141 5.20034 18.9889 6.10571 19.8943C7.01108 20.7997 8.08591 21.5178 9.26884 22.0078C10.4518 22.4978 11.7196 22.75 13 22.75C14.2804 22.75 15.5482 22.4978 16.7312 22.0078C17.9141 21.5178 18.9889 20.7997 19.8943 19.8943C20.7997 18.9889 21.5178 17.9141 22.0078 16.7312C22.4978 15.5482 22.75 14.2804 22.75 13C22.75 10.4141 21.7228 7.93419 19.8943 6.10571C18.0658 4.27723 15.5859 3.25 13 3.25C10.4141 3.25 7.93419 4.27723 6.10571 6.10571C4.27723 7.93419 3.25 10.4141 3.25 13Z" stroke-width="2.4375" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_45)"/>
+<path id="Vector_2" d="M13 7.58333V13L16.25 16.25" stroke-width="2.4375" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint1_linear_0_45)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_45" x1="-6.92076e-07" y1="2.16667" x2="-6.92076e-07" y2="23.8333" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B8EB14"/>
+<stop offset="1" stop-color="#6AA204"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_45" x1="4.84288e-07" y1="2.16667" x2="4.84288e-07" y2="23.8333" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B8EB14"/>
+<stop offset="1" stop-color="#6AA204"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,2 @@
+/** Runs before first paint, so a signed-out visitor or the wrong role never sees a dashboard flash by. */
+export const sessionInitScript = `(function(){try{var p=location.pathname,r=localStorage.getItem('kinora-session')||'',w=p==='/dashboard'||p.indexOf('/dashboard/')===0?'member':p==='/coach'||p.indexOf('/coach/')===0?'coach':'';if(w&&r!==w){location.replace(r==='coach'?'/coach':r==='member'?'/dashboard':'/login')}}catch(e){}})();`;

@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="calendar-event">
+<path id="Vector" d="M2.16667 3.79167C2.16667 3.50435 2.2808 3.2288 2.48397 3.02563C2.68713 2.82247 2.96268 2.70833 3.25 2.70833H9.75C10.0373 2.70833 10.3129 2.82247 10.516 3.02563C10.7192 3.2288 10.8333 3.50435 10.8333 3.79167V10.2917C10.8333 10.579 10.7192 10.8545 10.516 11.0577C10.3129 11.2609 10.0373 11.375 9.75 11.375H3.25C2.96268 11.375 2.68713 11.2609 2.48397 11.0577C2.2808 10.8545 2.16667 10.579 2.16667 10.2917V3.79167Z" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" stroke="#6D6E6E"/>
+<path id="Vector_2" d="M8.66667 1.625V3.79167" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" stroke="#6D6E6E"/>
+<path id="Vector_3" d="M4.33333 1.625V3.79167" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" stroke="#6D6E6E"/>
+<path id="Vector_4" d="M2.16667 5.95833H10.8333" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" stroke="#6D6E6E"/>
+<path id="Vector_5" d="M4.33333 8.125H5.41667V9.20833H4.33333V8.125Z" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" stroke="#6D6E6E"/>
+</g>
+</svg>

@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="droplet">
+<path id="Vector" d="M7.502 19.423C10.104 21.528 13.897 21.528 16.498 19.423C19.1 17.318 19.76 13.715 18.064 10.877L13.174 3.617C12.754 2.992 11.887 2.814 11.238 3.22C11.0751 3.32223 10.9354 3.45747 10.828 3.617L5.935 10.877C4.24 13.715 4.9 17.318 7.502 19.423Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_4)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="2.55436e-07" y1="2" x2="2.55436e-07" y2="22" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+</defs>
+</svg>

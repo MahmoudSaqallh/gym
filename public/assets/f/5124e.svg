@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="moon">
+<path id="Vector" d="M11 2.75C11.121 2.75 11.2411 2.75 11.3602 2.75C10.1826 3.84423 9.42571 5.31652 9.22101 6.91095C9.01632 8.50538 9.37682 10.1211 10.2398 11.4773C11.1029 12.8335 12.4138 13.8445 13.9449 14.3343C15.4759 14.8242 17.1302 14.7621 18.6203 14.1588C18.0471 15.538 17.1103 16.7356 15.9098 17.6241C14.7094 18.5125 13.2902 19.0585 11.8038 19.2036C10.3174 19.3488 8.81949 19.0877 7.46981 18.4483C6.12014 17.8089 4.96935 16.8151 4.1402 15.5729C3.31106 14.3307 2.83465 12.8868 2.76181 11.3951C2.68897 9.90335 3.02241 8.41985 3.72659 7.1028C4.43076 5.78575 5.47924 4.68456 6.7602 3.91667C8.04115 3.14879 9.50652 2.74303 11 2.74267V2.75Z" stroke-width="2.0625" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_4)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="1.02384e-07" y1="1.83333" x2="1.02384e-07" y2="20.1667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+</defs>
+</svg>

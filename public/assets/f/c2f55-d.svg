@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="wave-sine">
+<path id="Vector" d="M19.25 11H17.4167C16.5972 11 15.8932 10.2144 15.8024 9.16667C15.5311 6.00417 15.1158 3.66667 13.2825 3.66667C11.4492 3.66667 10.9908 6.95017 10.9908 11C10.9908 15.0498 10.5325 18.3333 8.69917 18.3333C6.86583 18.3333 6.4515 15.9986 6.17925 12.8333C6.08758 11.7819 5.3845 11 4.56317 11H2.72983" stroke-width="2.0625" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_4)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="-2.64768e-07" y1="1.83333" x2="-2.64768e-07" y2="20.1667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B8EB14"/>
+<stop offset="1" stop-color="#6AA204"/>
+</linearGradient>
+</defs>
+</svg>

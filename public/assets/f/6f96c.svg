@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="363.294" height="83.3477" viewBox="0 0 363.294 83.3477" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group">
+<path id="recharts-area-_r_1h_" d="M0.185171 21.9147L60.6852 10.5147L121.185 1.01468L181.685 12.4147L242.185 18.1147L302.685 8.61468L363.185 1.99568V83.3477H302.685H242.185H181.685H121.185H60.6852H0.185171V21.9147Z" fill="url(#paint0_linear_0_68)" fill-opacity="0.6"/>
+<path id="Vector" d="M0.185171 21.9147L60.6852 10.5147L121.185 1.01468L181.685 12.4147L242.185 18.1147L302.685 8.61468L363.185 1.99568" stroke-width="2" stroke="#9AE600"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_68" x1="0.185171" y1="1.01468" x2="0.185171" y2="83.3477" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9AE600" stop-opacity="0.24"/>
+<stop offset="1" stop-color="#9AE600" stop-opacity="0.02"/>
+</linearGradient>
+</defs>
+</svg>

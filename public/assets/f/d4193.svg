@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="temperature">
+<path id="Vector" d="M9.16667 12.375C8.46765 12.7786 7.92133 13.4015 7.61244 14.1473C7.30355 14.893 7.24936 15.7198 7.45827 16.4994C7.66718 17.2791 8.12751 17.968 8.76788 18.4594C9.40824 18.9508 10.1928 19.2171 11 19.2171C11.8072 19.2171 12.5918 18.9508 13.2321 18.4594C13.8725 17.968 14.3328 17.2791 14.5417 16.4994C14.7506 15.7198 14.6964 14.893 14.3876 14.1473C14.0787 13.4015 13.5324 12.7786 12.8333 12.375V4.58333C12.8333 4.0971 12.6402 3.63079 12.2964 3.28697C11.9525 2.94315 11.4862 2.75 11 2.75C10.5138 2.75 10.0475 2.94315 9.70364 3.28697C9.35982 3.63079 9.16667 4.0971 9.16667 4.58333V12.375Z" stroke-width="2.0625" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_4)"/>
+<path id="Vector_2" d="M9.16667 8.25H12.8333" stroke-width="2.0625" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint1_linear_0_4)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="-1.14739e-06" y1="1.83333" x2="-1.14739e-06" y2="20.1667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_4" x1="2.55803e-07" y1="1.25" x2="2.55803e-07" y2="21.25" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+</defs>
+</svg>

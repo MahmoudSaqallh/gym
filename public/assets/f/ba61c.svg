@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bread">
+<path id="Vector" d="M14.25 3.16667C14.7308 3.16686 15.2002 3.31298 15.5962 3.5857C15.9922 3.85843 16.2961 4.24492 16.4677 4.69406C16.6393 5.14321 16.6705 5.63386 16.5572 6.10114C16.444 6.56841 16.1915 6.99031 15.8333 7.31104V14.25C15.8333 14.6699 15.6665 15.0727 15.3696 15.3696C15.0727 15.6665 14.6699 15.8333 14.25 15.8333H4.75C4.33007 15.8333 3.92735 15.6665 3.63041 15.3696C3.33348 15.0727 3.16667 14.6699 3.16667 14.25V7.31183C2.81698 6.99909 2.56775 6.5898 2.45041 6.13557C2.33307 5.68135 2.35288 5.20255 2.50734 4.75957C2.6618 4.3166 2.944 3.92929 3.31832 3.6465C3.69265 3.36372 4.14234 3.19813 4.61067 3.17062H14.25V3.16667Z" stroke-width="1.78125" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_58)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_58" x1="-7.28456e-08" y1="1.58333" x2="-7.28456e-08" y2="17.4167" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,26 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="stopwatch">
+<path id="Vector" d="M3.33333 8.66667C3.33333 9.2795 3.45404 9.88634 3.68856 10.4525C3.92308 11.0187 4.26683 11.5332 4.70017 11.9665C5.13351 12.3998 5.64796 12.7436 6.21414 12.9781C6.78033 13.2126 7.38716 13.3333 8 13.3333C8.61284 13.3333 9.21967 13.2126 9.78586 12.9781C10.352 12.7436 10.8665 12.3998 11.2998 11.9665C11.7332 11.5332 12.0769 11.0187 12.3114 10.4525C12.546 9.88634 12.6667 9.2795 12.6667 8.66667C12.6667 7.42899 12.175 6.24201 11.2998 5.36684C10.4247 4.49167 9.23768 4 8 4C6.76232 4 5.57534 4.49167 4.70017 5.36684C3.825 6.24201 3.33333 7.42899 3.33333 8.66667Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint0_linear_0_67)"/>
+<path id="Vector_2" d="M9.66667 7L8 8.66667" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint1_linear_0_67)"/>
+<path id="Vector_3" d="M11.3333 5.33333L12 4.66667" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint2_linear_0_67)"/>
+<path id="Vector_4" d="M9.33333 2H6.66667" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint3_linear_0_67)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_67" x1="-3.63305e-07" y1="1.33333" x2="-3.63305e-07" y2="14.6667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_67" x1="-4.01338e-07" y1="1.33333" x2="-4.01338e-07" y2="14.6667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_67" x1="-4.07298e-07" y1="1.33333" x2="-4.07298e-07" y2="14.6667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+<linearGradient id="paint3_linear_0_67" x1="-2.58287e-07" y1="1" x2="-2.58287e-07" y2="21" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8FD400"/>
+<stop offset="1" stop-color="#4C7A02"/>
+</linearGradient>
+</defs>
+</svg>
